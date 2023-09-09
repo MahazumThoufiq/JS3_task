@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Anonymous Function:
+        let rotateArrayByKTimes = (function () {
+        return function (arr, k) {
+            if (arr.length === 0) {
+            return arr;
+            }
+
+            let rotations = k % arr.length;
+            return arr.slice(rotations).concat(arr.slice(0, rotations));
+        };
+        })();
+
+        let originalArray = [1, 2, 3, 4, 5];
+        let k = 2;
+        let rotatedArray = rotateArrayByKTimes(originalArray, k);
+
+        console.log(rotatedArray);
+
+        //IIFE Function:
+        (function (originalArray, k) {
+            let rotations = k % originalArray.length;
+            rotatedArray = originalArray.slice(rotations).concat(originalArray.slice(0, rotations));
+            console.log(rotatedArray);
+        })([1, 2, 3, 4, 5], 2);
+
+       
+    </script>
+</body>
+</html>

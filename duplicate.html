@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Anonymous Function
+        let dupVal = [1, 2, 2, 2, 3, 4, 4, 5, 6, 6];
+
+        let uniqueArray = dupVal.filter(function (value, index, self) {
+        return self.indexOf(value) === index;
+        });
+
+        console.log(uniqueArray);
+
+        //IIFE Function
+        
+        (function (dupval) {
+            uniqueArray = dupval.filter((item, index) => dupval.indexOf(item) === index);
+            console.log(uniqueArray);
+        })([1, 2, 2, 2, 3, 4, 4, 5, 6, 6]);
+    </script>
+</body>
+</html>

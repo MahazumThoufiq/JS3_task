@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //Anonymous function:
+       let words = ["level", "madam", "civic", "racecar", "apple", "refer"];
+        let isPalindrome = function (word) {
+        let reversedWord = word.split("").reverse().join("");
+        return word === reversedWord;
+        };
+
+        let palindromeWords = words.filter(function (word) {
+        return isPalindrome(word);
+        });
+
+        console.log(palindromeWords);
+
+    //IIFE function:
+    let word;
+        (function(words) {
+        word = toString();
+        let reversedWord = word.split("").reverse().join("");
+        return word === reversedWord;
+        
+        let palindromeWords = words.filter(function (words) {
+            return word;
+        });
+        console.log(palindromeWords);
+
+        })(["level", "madam", "civic", "racecar", "apple", "refer"]);
+
+
+    //Arrow function:
+       let words = ["level", "madam", "civic", "racecar", "apple", "refer"];
+        let isPalindrome =  (word) => {
+        let reversedWord = word.split("").reverse().join("");
+        return word === reversedWord;
+        };
+
+        let palindromeWords = words.filter(function (word) {
+        return isPalindrome(word);
+        });
+
+        console.log(palindromeWords);
+    </script>
+</body>
+</html>
